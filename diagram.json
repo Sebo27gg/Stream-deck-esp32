@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Tu Nombre",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-rotary-encoder", "id": "encoder", "top": 0, "left": 150, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btnMedia", "top": 120, "left": 150, "attrs": { "color": "green", "label": "Media" } },
+    { "type": "wokwi-pushbutton", "id": "btnCopy", "top": 120, "left": 250, "attrs": { "color": "blue", "label": "Copy" } },
+    { "type": "wokwi-pushbutton", "id": "btnPaste", "top": 200, "left": 250, "attrs": { "color": "blue", "label": "Paste" } },
+    { "type": "wokwi-pushbutton", "id": "btnSpotify", "top": 200, "left": 150, "attrs": { "color": "green", "label": "Spotify" } },
+    { "type": "wokwi-pushbutton", "id": "btnDiscord", "top": 280, "left": 150, "attrs": { "color": "purple", "label": "Discord" } },
+    { "type": "wokwi-pushbutton", "id": "btnFortnite", "top": 280, "left": 250, "attrs": { "color": "yellow", "label": "Fornite" } },
+    { "type": "wokwi-pushbutton", "id": "btnCMD", "top": 360, "left": 150, "attrs": { "color": "grey", "label": "CMD" } },
+    { "type": "wokwi-pushbutton", "id": "btnBrackets", "top": 360, "left": 250, "attrs": { "color": "red", "label": "< >" } }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "encoder:GND", "esp:GND.1", "black", [] ],
+    [ "encoder:VCC", "esp:3V3.1", "red", [] ],
+    [ "encoder:CLK", "esp:4", "orange", [] ],
+    [ "encoder:DT", "esp:5", "brown", [] ],
+    [ "btnMedia:2.r", "esp:GND.2", "black", [] ],
+    [ "btnMedia:1.r", "esp:6", "green", [] ],
+    [ "btnCopy:2.r", "esp:GND.2", "black", [] ],
+    [ "btnCopy:1.r", "esp:7", "blue", [] ],
+    [ "btnPaste:2.r", "esp:GND.2", "black", [] ],
+    [ "btnPaste:1.r", "esp:15", "blue", [] ],
+    [ "btnSpotify:2.r", "esp:GND.3", "black", [] ],
+    [ "btnSpotify:1.r", "esp:16", "green", [] ],
+    [ "btnDiscord:2.r", "esp:GND.3", "black", [] ],
+    [ "btnDiscord:1.r", "esp:17", "purple", [] ],
+    [ "btnFortnite:2.r", "esp:GND.3", "black", [] ],
+    [ "btnFortnite:1.r", "esp:18", "yellow", [] ],
+    [ "btnCMD:2.r", "esp:GND.4", "black", [] ],
+    [ "btnCMD:1.r", "esp:8", "grey", [] ],
+    [ "btnBrackets:2.r", "esp:GND.4", "black", [] ],
+    [ "btnBrackets:1.r", "esp:3", "red", [] ]
+  ],
+  "dependencies": {}
+}
