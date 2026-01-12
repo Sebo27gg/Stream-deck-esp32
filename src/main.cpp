@@ -4,22 +4,17 @@
 #include "USBHIDConsumerControl.h"
 #include <OneButton.h>
 
-// --- Definición de Pines ---
-// NOTA: El GPIO 3 en el S3 es una "Strapping Pin". Si tienes problemas al 
-// subir código o bootear, asegúrate de NO tener el botón presionado al encender.
 #define PIN_BTN1 17
 #define PIN_BTN2 18
 #define PIN_BTN3 16
 #define PIN_BTN4 8
 #define PIN_BTN5 3
 
-// Instancias de HID para ESP32-S3
-// GRUPO 2 (Nuevos - Pines Seguros)
-#define PIN_BTN6 4  // Alt + G + N
-#define PIN_BTN7 5  // Abrir Fortnite
-#define PIN_BTN8 6  // Ctrl + C
-#define PIN_BTN9 7  // Ctrl + V
-#define PIN_BTN10 15 // Ctrl + X
+#define PIN_BTN6 4  
+#define PIN_BTN7 5  
+#define PIN_BTN8 6  
+#define PIN_BTN9 7  
+#define PIN_BTN10 15 
 
 USBHIDKeyboard Keyboard;
 USBHIDConsumerControl Consumer;
@@ -69,7 +64,7 @@ void setup() {
 
   // --- CONFIGURACIÓN BOTONES 6-10 ---
 
-  // Botón 6 (Pin 4): Alt + G + N
+  // Botón 6 (Pin 4): Combinación teclas para mutearse discord?
   btn6.attachClick([]() {
     Keyboard.press(KEY_LEFT_ALT);
     Keyboard.press(KEY_LEFT_SHIFT);
@@ -81,9 +76,9 @@ void setup() {
   // Botón 7 (Pin 5): Abrir Fortnite
   btn7.attachDoubleClick(abrirFortnite);
 
-  // Botón 8 (Pin 6): Ctrl + C (Copiar)
+  // Botón 8 (Pin 6): Abrir app luces
   btn8.attachClick(abrirexe);
-  // Botón 9 (Pin 7): Ctrl + V (Pegar)
+  // Botón 9 (Pin 7): Copiar un click, pegar doble click
   btn9.attachClick([]() {
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press('c');
